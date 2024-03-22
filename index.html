@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Ethical Geeks</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+          
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #080808;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            margin-left: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: #111010;
+            text-decoration: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        main {
+            padding-top: 60px; /* Adjust based on header height */
+            background: url(./images/bg.jpg);
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+    width: calc(50% - 10px); /* Adjust spacing between images */
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Round frame */
+    border: 2px solid #333; /* Border color */
+}
+
+.service-description {
+    width: calc(50% - 10px); /* Adjust spacing between images */
+}
+
+.service-description h3 {
+    margin-top: 0;
+}
+
+
+        .swiper-container {
+            width: 100%;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 10px 0;
+            }
+
+            .menu li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .menu a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.2em;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .service {
+                flex-direction: row;
+            }
+        }
+
+        section.contactUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--padding);
+    background: #0bdceb81;
+    color: #fff;
+}
+
+section.contactUs .mainContent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section.contactUs .mainContent h2{
+    position: relative;
+    font-size: 40px;
+    color: #f8f8f8;
+}
+
+section.contactUs .mainContent p{
+    position: relative;
+    font-size: 18px;
+    color: #f8f8f8;
+}
+
+section.contactUs .socialMedia{
+    position: relative;
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+section.contactUs .socialMedia{
+    display: flex;
+    justify-content: center;
+}
+
+section.contactUs .socialMedia .socialMedium{
+    position: relative;
+    width: 250px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #fdf4f4;
+}
+
+section.contactUs .socialMedia .socialMedium img{
+    height: 50px;
+   
+}
+section.contactUs .socialMedia .socialMedium p{
+    font-size: 18px;
+    color: #000;
+   
+}
+ /* Newsletter Signup Form */
+ .contactUs form {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contactUs form input[type="email"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .contactUs form button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contactUs form button:hover {
+      background-color: #45a049;
+    }
+  /* Team Members Styles */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px; /* Set a fixed height to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-bottom: 2px solid #333; /* Adding a border below the image */
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    margin-top: 0;
+}
+
+.member-info p {
+    margin-bottom: 15px;
+}
+
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Professional Ethical Geeks</div>
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu" id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="home" class="section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-color: #F9EBEA;">
+                    <h1>Welcome to Professional Ethical Geeks</h1>
+                    <p>We are a leading IT company specializing in networking solutions, security systems, system administration, and CCTV installations.</p>
+                </div>
+                <div class="swiper-slide" style="background-color: #F2D7D5;">
+                    <h1>Expert IT Solutions</h1>
+                    <p>Our team of experts provides innovative and reliable IT solutions tailored to your business needs.</p>
+                </div>
+                <div class="swiper-slide" style="background-color: #E6B0AA;">
+                    <h1>Secure Your Business</h1>
+                    <p>Protect your data and ensure the security of your network with our advanced solutions.</p>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="service">
+                    <img src="./images/system.png" alt="System Administration Icon">
+                    <h3>System Administration</h3>
+                    <p>System Administration services include system and operating software configuration, monitoring, management, patching and troubleshooting and responding to incidents while ensuring the desired level of service uptime at all times..</p>
+                    <p></p>
+                </div>
+            </div>
+              <div class="swiper-slide">
+                  <div class="service">
+                      <img src="./images/network.png" alt="Networking Icon">
+                      <h3>Networking Solutions</h3>
+                      <p>Our networking solutions are designed to optimize your network infrastructure for seamless communication and connectivity. We Design and implement network architectures.
+                        Create and maintain network diagrams and documentation.
+                        Assist in the setup and maintenance of network servers.
+                        Provide technical support</p>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="service">
+                      <img src="./images/security.png" alt="Security Icon">
+                      <h3>Security Systems</h3>
+                      <p>we are in  charged of maintaining the integrity of an organization's data, a network security engineer continuously monitors the network for security breaches, carries out simulated attacks to identify vulnerabilities, and develops security protocols to thwart potential threats.Protect your data and network with our advanced security systems to ensure a secure working environment.</p>
+                  </div>
+              </div>
+             
+              <div class="swiper-slide">
+                  <div class="service">
+                      <img src="./images/cctv.png" alt="CCTV Installation Icon">
+                      <h3>CCTV Installation</h3>
+                      <p>Secure your premises with our professional CCTV installation services for enhanced security and surveillance.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </section>
+  
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>At Our IT Company, we are dedicated to delivering high-quality IT solutions to our clients. Meet our talented team who makes it all possible:</p>
+    
+    <div class="team-members">
+        <div class="team-member">
+            <img src="./images/Max.jpg" alt="Max">
+            <div class="member-info">
+                <h3>Maxwell Nsor</h3>
+                <p>CEO & Founder</p>
+                <p>Max is an experienced IT professional with over 15 years of experience in network security and system administration.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/ardson.jpg" alt="Ardson">
+            <div class="member-info">
+                <h3>Ardson</h3>
+                <p>Head of Operations</p>
+                <p>Ardson our day-to-day operations and ensures that projects are delivered on time and within budget.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Lisa.jpg" alt="Kandalisa">
+            <div class="member-info">
+                <h3>Kandalisa</h3>
+                <p>Chief Technology Officer</p>
+                <p>Kandalisa leads our technology team and drives innovation in our product development process.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Nady.jpg" alt="Nady">
+            <div class="member-info">
+                <h3>Nady</h3>
+                <p>Lead Software Engineer</p>
+                <p>Nady specializes in software development and ensures the quality and performance of our software products.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Uju.jpg" alt="Sybyl Uju">
+            <div class="member-info">
+                <h3>Sybyl Uju</h3>
+                <p>Network Security Specialist</p>
+                <p>Sybyl Uju is an expert in network security and helps our clients protect their data and infrastructure.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Rhoda.jpg" alt="Rhoda">
+            <div class="member-info">
+                <h3>Rhoda</h3>
+                <p>Customer Success Manager</p>
+                <p>Sophia ensures that our clients are satisfied with our services and helps them achieve their business goals.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Edem.jpg" alt="Edem">
+            <div class="member-info">
+                <h3>Edem</h3>
+                <p>Senior Network Engineer</p>
+                <p>Edem is responsible for designing and maintaining complex network infrastructures for our clients.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="./images/Gwen.jpg" alt="Gwendolyn">
+            <div class="member-info">
+                <h3>Gwendolyn</h3>
+                <p>UI/UX Designer</p>
+                <p>Gwendolyn creates intuitive and visually appealing user interfaces to enhance user experience in our products.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    </section>
+
+  <section class="contactUs" id="contact">
+    <div class="mainContent">
+      <h2>Contact Us</h2>
+      <p>Have a question or need assistance? Feel free to get in touch with us.</p>
+      <!-- Newsletter Signup Form -->
+      <form action="#" method="post">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="socialMedia">
+      <div class="socialMedium">
+        <img src="./images/facebook.png" alt="Facebook" />
+        <p>Facebook</p>
+      </div>
+      <div class="socialMedium">
+        <img src="./images/linked-in.png" alt="LinkedIn" />
+        <p>LinkedIn</p>
+      </div>
+      <div class="socialMedium">
+        <img src="./images/twitter.png" alt="Twitter" />
+        <p>Twitter</p>
+      </div>
+      <div class="socialMedium">
+        <img src="./images/whatsapp.png" alt="Whatsapp" />
+        <p>Whatsapp</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+    });
+</script>
+<script>
+    const menuToggle = document.querySelector('.menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+</script>
+<!-- Smooth Scrolling Script -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+</body>
+</html>
